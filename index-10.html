@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#120f2e">
+<title>Make something special 💌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#120f2e;
+  --serif:"Fraunces","Noto Serif Bengali",Georgia,serif;
+  --sans:"DM Sans","Hind Siliguri",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:inherit;margin:0}
+html{height:100%}
+body{
+  min-height:100%;min-height:100dvh;
+  display:flex;flex-direction:column;
+  background:var(--ink);color:#fff;font-family:var(--sans);
+  padding-top:env(safe-area-inset-top,0px);
+}
+header{padding:30px 22px 22px;max-width:760px}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,5.2vw,3rem);line-height:1.12;letter-spacing:-.01em}
+header p{margin-top:10px;color:rgba(255,255,255,.72);font-size:1rem;line-height:1.5;max-width:44ch}
+
+.worlds{flex:1;display:flex;flex-direction:column}
+.world{
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-end;gap:8px;
+  min-height:210px;padding:26px 22px;
+  color:var(--fg);background:var(--bg);text-decoration:none;
+  isolation:isolate;
+}
+.world:focus-visible{outline:3px solid #fff;outline-offset:-6px}
+.world::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--deco);transition:transform .5s ease}
+.glyph{
+  position:absolute;top:18px;right:20px;font-size:4.6rem;line-height:1;
+  transform:rotate(var(--tilt));transition:transform .4s ease;
+  filter:drop-shadow(0 8px 14px rgba(0,0,0,.25));
+}
+.world h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,5vw,2.3rem);line-height:1.1}
+.world p{max-width:32ch;line-height:1.45;font-size:.98rem;opacity:.88}
+.go{
+  align-self:flex-start;margin-top:8px;padding:10px 18px;border-radius:999px;
+  font-weight:700;font-size:.95rem;background:var(--fg);color:var(--bg);
+}
+.world:hover::before,.world:focus-visible::before{transform:scale(1.06)}
+.world:hover .glyph,.world:focus-visible .glyph{transform:rotate(0deg) scale(1.1)}
+
+/* each panel uses the colours of the page it opens */
+.letter{
+  --bg:#17143f;--fg:#f4dc9c;--tilt:-8deg;
+  --deco:radial-gradient(2px 2px at 12% 22%,#fff8 50%,transparent 52%),
+         radial-gradient(1.5px 1.5px at 38% 60%,#fff9 50%,transparent 52%),
+         radial-gradient(2px 2px at 64% 18%,#fffb 50%,transparent 52%),
+         radial-gradient(1.5px 1.5px at 82% 70%,#fff8 50%,transparent 52%),
+         radial-gradient(1.5px 1.5px at 24% 86%,#fff7 50%,transparent 52%),
+         radial-gradient(circle at 85% 0%,#3a2a78 0,transparent 55%);
+}
+.birthday{
+  --bg:#ffd3e2;--fg:#7a1646;--tilt:7deg;
+  --deco:radial-gradient(7px 7px at 10% 24%,#ff7aa8 60%,transparent 62%),
+         radial-gradient(5px 5px at 30% 70%,#ffb347 60%,transparent 62%),
+         radial-gradient(6px 6px at 58% 30%,#8fd3c8 60%,transparent 62%),
+         radial-gradient(5px 5px at 76% 80%,#ff7aa8 60%,transparent 62%),
+         radial-gradient(7px 7px at 90% 50%,#c9a7ff 60%,transparent 62%),
+         linear-gradient(180deg,#ffe3ec,#ffc4d8);
+}
+.rose{
+  --bg:#6e0d22;--fg:#ffd9d4;--tilt:-5deg;
+  --deco:radial-gradient(circle at 92% 8%,#b3203f 0,transparent 48%),
+         radial-gradient(circle at 5% 100%,#4a0716 0,transparent 55%);
+  padding-bottom:calc(26px + env(safe-area-inset-bottom,0px));
+}
+
+@media (min-width:820px){
+  header{padding:44px 48px 30px}
+  .worlds{flex-direction:row}
+  .world{flex:1;min-height:420px;padding:40px 36px;transition:flex-grow .45s ease}
+  .rose{padding-bottom:40px}
+  .world:hover,.world:focus-visible{flex-grow:1.5}
+  .glyph{font-size:6.5rem;top:32px;right:32px}
+}
+@media (prefers-reduced-motion:reduce){
+  .world,.world::before,.glyph{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Make something special, then send it as a link</h1>
+  <p>Pick one below, fill in a few details, and share the link with someone you care about.</p>
+</header>
+
+<main class="worlds">
+  <a class="world letter" href="letter.html">
+    <span class="glyph" aria-hidden="true">💌</span>
+    <h2>Love letter</h2>
+    <p>A letter written under the stars, with music, photos and a little quiz.</p>
+    <span class="go">Write a letter</span>
+  </a>
+
+  <a class="world birthday" href="birthday.html">
+    <span class="glyph" aria-hidden="true">🎂</span>
+    <h2>Birthday page</h2>
+    <p>A birthday countdown and a surprise waiting at the end.</p>
+    <span class="go">Make a birthday page</span>
+  </a>
+
+  <a class="world rose" href="rose.html">
+    <span class="glyph" aria-hidden="true">🌹</span>
+    <h2>Rose for someone</h2>
+    <p>Grow a rose with their name on it and send it over.</p>
+    <span class="go">Send a rose</span>
+  </a>
+</main>
+
+</body>
+</html>
