@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0a24">
+<title>Make something special 💌</title>
+<style>
+:root{
+  --bg1:#0b0a24;--bg2:#2a1050;--tx:#f7f2ff;--tx2:rgba(255,255,255,.7);
+  --card:rgba(255,255,255,.08);--line:rgba(255,255,255,.2);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;margin:0}
+html,body{min-height:100%}
+body{
+  font-family:"Segoe UI",system-ui,-apple-system,"Noto Sans Bengali",sans-serif;
+  color:var(--tx);
+  background:radial-gradient(circle at 20% 10%,#4a1a6b 0,transparent 45%),
+             radial-gradient(circle at 85% 90%,#7a1c4b 0,transparent 40%),
+             linear-gradient(160deg,var(--bg1),var(--bg2));
+  background-attachment:fixed;
+  display:flex;flex-direction:column;align-items:center;
+  padding:48px 18px 40px;
+}
+h1{font-size:clamp(1.8rem,6vw,2.6rem);text-align:center;font-weight:700;letter-spacing:.3px}
+.sub{color:var(--tx2);text-align:center;margin:10px 0 34px;max-width:420px;line-height:1.5}
+.grid{display:grid;gap:16px;width:100%;max-width:460px}
+a.card{
+  display:flex;align-items:center;gap:16px;
+  text-decoration:none;color:inherit;
+  background:var(--card);border:1px solid var(--line);
+  border-radius:20px;padding:20px;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  transition:transform .2s,background .2s,border-color .2s;
+}
+a.card:hover,a.card:focus-visible{transform:translateY(-3px);background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.4);outline:none}
+.ic{font-size:2.2rem;flex:none;width:56px;height:56px;display:grid;place-items:center;border-radius:16px;background:rgba(255,255,255,.1)}
+.t{font-weight:700;font-size:1.1rem}
+.d{color:var(--tx2);font-size:.9rem;margin-top:3px;line-height:1.4}
+.arrow{margin-left:auto;font-size:1.4rem;opacity:.6}
+footer{margin-top:36px;color:var(--tx2);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body>
+<h1>Make something special 💌</h1>
+<p class="sub">Choose what you'd like to create and send to someone you care about.</p>
+
+<div class="grid">
+  <a class="card" href="index-12.html">
+    <div class="ic">💌</div>
+    <div><div class="t">Love Letter</div><div class="d">Write a letter under the stars and share it as a link.</div></div>
+    <div class="arrow">›</div>
+  </a>
+  <a class="card" href="index-10.html">
+    <div class="ic">🎂</div>
+    <div><div class="t">Birthday Page</div><div class="d">A birthday countdown and surprise for someone special.</div></div>
+    <div class="arrow">›</div>
+  </a>
+  <a class="card" href="index-11.html">
+    <div class="ic">🌹</div>
+    <div><div class="t">Rose for Someone</div><div class="d">Make a rose and send it to someone.</div></div>
+    <div class="arrow">›</div>
+  </a>
+</div>
+
+<footer>Made with ❤️</footer>
+</body>
+</html>
